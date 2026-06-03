@@ -65,3 +65,15 @@ app.use(
 "/api/payment",
 paymentRoutes
 );
+
+const cors = require("cors");
+
+app.use(cors());
+
+app.use(
+  cors({
+    origin:
+      "https://food-delivery-frontend.onrender.com",
+    credentials: true,
+  })
+);
