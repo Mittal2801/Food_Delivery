@@ -1,78 +1,58 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-require("dotenv").config();
+const dotenv = require("dotenv");
 const path = require("path");
 
-
-const userRoutes = require("./routes/userRoutes");
+dotenv.config();
 
 const app = express();
 
-// middleware
-app.use(cors());
+// Middleware
 app.use(express.json());
 
-// database connection
-mongoose.connect(process.env.MONGO_URI)
-.then(() => console.log("MongoDB Connected"))
-.catch((err) => console.log(err));
+app.use(
+  cors({
+    origin: "https://food-delivery-frontend.onrender.com",
+    credentials: true,
+  })
+);
 
-// routes
-app.use("/api/users", userRoutes);
+// Database
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => console.log("MongoDB Connected"))
+  .catch((err) => console.log(err));
 
-// test route
-app.get("/", (req, res) => {
-  res.send("API Running");
-});
-
-// start server
-app.listen(process.env.PORT, () => {
-  console.log(`Server running on port ${process.env.PORT}`);
-});
-
-
+// Routes
+const userRoutes = require("./routes/userRoutes");
 const foodRoutes = require("./routes/foodRoutes");
+const cartRoutes = require("./routes/cartRoutes");
+const orderRoutes = require("./routes/orderRoutes");
+const dashboardRoutes = require("./routes/dashboardRoutes");
+const paymentRoutes = require("./routes/paymentRoutes");
+
+app.use("/api/users", userRoutes);
 app.use("/api/foods", foodRoutes);
+app.use("/api/cart", cartRoutes);
+app.use("/api/orders", orderRoutes);
+app.use("/api/dashboard", dashboardRoutes);
+app.use("/api/payment", paymentRoutes);
+
+// Upload folder
 app.use(
   "/uploads",
   express.static(path.join(__dirname, "uploads"))
 );
 
-const cartRoutes =
-require("./routes/cartRoutes");
+// Test Route
+app.get("/", (req, res) => {
+  res.send("API Running");
+});
 
-app.use("/api/cart", cartRoutes);
+// Server Start
+const PORT = process.env.PORT || 5000;
 
-const orderRoutes = require("./routes/orderRoutes");
-
-app.use("/api/orders", orderRoutes);
-
-const dashboardRoutes =
-require("./routes/dashboardRoutes");
-
-app.use(
-  "/api/dashboard",
-  dashboardRoutes
-);
-
-const paymentRoutes =
-require(
-"./routes/paymentRoutes"
-);
-
-app.use(
-"/api/payment",
-paymentRoutes
-);
-
-
-app.use(cors());
-
-app.use(
-  cors({
-    origin:
-      "https://food-delivery-frontend.onrender.com",
-    credentials: true,
-  })
-);
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
