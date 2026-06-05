@@ -167,7 +167,8 @@ const Nav = () => {
 
       {/* BREADCRUMB */}
       <div className="mx-60 my-5">
-        <Link to="/home">Home</Link>
+        <Link to="/home">Home / </Link>
+        <Link to='/locationinindia'>Location</Link>
         {" / "}
         Ahmedabad Restaurants
       </div>
