@@ -15,7 +15,7 @@ export const registerUser = async (userData) => {
 // login
 export const loginUser = async (userData) => {
   const res = await axios.post(
-    `${API}/login`,
+    "https://food-delivery-0p1u.onrender.com/api/users/login",
     userData
   );
 
