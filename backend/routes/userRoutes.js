@@ -9,7 +9,7 @@ const {
 
 // routes
 router.post("/register", registerUser);
-router.post("/login", loginUser);
+router.post("/api/users/login", loginUser);
 router.get("/", getUsers);
 
 module.exports = router;
