@@ -18,7 +18,7 @@ app.use(
   })
 );
 
-// Database
+// Database Connection
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB Connected"))
@@ -32,6 +32,7 @@ const orderRoutes = require("./routes/orderRoutes");
 const dashboardRoutes = require("./routes/dashboardRoutes");
 const paymentRoutes = require("./routes/paymentRoutes");
 
+// API Routes
 app.use("/api/users", userRoutes);
 app.use("/api/foods", foodRoutes);
 app.use("/api/cart", cartRoutes);
@@ -39,7 +40,7 @@ app.use("/api/orders", orderRoutes);
 app.use("/api/dashboard", dashboardRoutes);
 app.use("/api/payment", paymentRoutes);
 
-// Upload folder
+// Static Upload Folder
 app.use(
   "/uploads",
   express.static(path.join(__dirname, "uploads"))
@@ -50,7 +51,7 @@ app.get("/", (req, res) => {
   res.send("API Running");
 });
 
-// Server Start
+// Start Server
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
