@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API =
-"http://localhost:5000/api/cart";
+"https://food-delivery-0p1u.onrender.com";
 
 export const addToCart =
 async (data) => {

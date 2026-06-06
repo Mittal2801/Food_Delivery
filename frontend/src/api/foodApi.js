@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = "http://localhost:5000/api/foods";
+const API = "https://food-delivery-0p1u.onrender.com";
 
 // add food
 export const addFood = async (foodData) => {

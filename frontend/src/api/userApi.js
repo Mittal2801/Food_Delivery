@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = "http://localhost:5000/api/users";
+const API = "https://food-delivery-0p1u.onrender.com";
 
 // register
 export const registerUser = async (userData) => {
