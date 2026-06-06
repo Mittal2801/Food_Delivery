@@ -1,5 +1,5 @@
 import React from 'react'
-import { Collectionsone, collectionstwo } from '../assets/Asserts'
+import { Collectionsone, collectionstwo, NightlifeCollection } from '../assets/Asserts'
 
 const Nightlife = () => {
   return (
@@ -48,9 +48,23 @@ const Nightlife = () => {
         <div className='mt-20 mx-40'>
             <img src="https://b.zmtcdn.com/data/o2_assets/e067a1cf0d3fe27b366402b98b994e9f1716296909.png" alt="" />
         </div>
-        <div>Nightlife: Night clubs, pubs and bar in Ahmedabad</div>
-        <div></div>
-        <div className='ps-150 mt-10 mb-50'>
+        <div className='mx-20 py-10 text-3xl font-semibold'>Nightlife: Night clubs, pubs and bar in Ahmedabad</div>
+        <div className='grid grid-cols-3 ms-20'>
+          {
+            NightlifeCollection.map((p)=>{
+              return(
+                <div className='mx-3'>
+                  <div><img src={p.image} alt="" className='rounded-sm w-[400px] h-[300px] '/></div>
+                  <div className='text-sm py-1'>{p.name}</div>
+                  <div className='text-sm '>{p.food}</div>
+                  <div className='text-sm py-1'>{p.location}</div>
+                  <div className='font-semibold'>{p.price}</div>
+                </div>
+              )
+            })
+          }
+        </div>
+        <div className='ps-150 mt-20 mb-30'>
           <div className='flex text-3xl'><p className='pt-5 pe-5'>End of search results</p>
             <img src="https://b.zmtcdn.com/web/assets/search/6d548ba48f0e4e4b46c19ad4b15a3f011615379209.jpeg" alt="" className='w-[100px]' />
           </div>

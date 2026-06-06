@@ -1266,14 +1266,6 @@ export const ResInDelhi = [
 export const NightlifeCollection = [
     {
         "id":1,
-        "image":"https://b.zmtcdn.com/data/pictures/4/20698004/8e8aefc86f8dff6f2bfbb5bd3dd1c6b4_featured_v2.jpg",
-        "name":"Cha Hong Kong Eating House",
-        "food":"Chinese, Sushi, Asian, Japanese, Salad, Desserts",
-        "location":"19, 4th Floor, Phoenix Palladium Mall, Zydus Hospital Cross Road, Near Eklavya Sports Acadamy, Thaltej, Ahmedabad",
-        "price":"2,400 for two",
-    },
-    {
-        "id":2,
         "image":"https://b.zmtcdn.com/data/pictures/7/20620727/c250a0d2a53276505b62c9708338fb45_featured_v2.jpg",
         "name":"Ishaara",
         "food":"Biryani, North Indian, Kebab, Mughlai, Desserts",
@@ -1281,7 +1273,7 @@ export const NightlifeCollection = [
         "price":"2,600 for two",
     },
     {
-        "id":3,
+        "id":2,
         "image":"https://b.zmtcdn.com/data/pictures/7/18821777/a411d77a6ec74e0f77f6d73840002546_o2_featured_v2.jpg",
         "name":"Little French House",
         "food":"Cafe, Beverages, Continental, Italian, Mexican, Fast Food, Desserts, Waffle",
@@ -1289,7 +1281,7 @@ export const NightlifeCollection = [
         "price":"2,700 for two",
     },
     {
-        "id":4,
+        "id":3,
         "image":"https://b.zmtcdn.com/data/pictures/4/20801074/ebeba732308ce8da7ff491c7171b716a_featured_v2.jpg",
         "name":"The Lounge",
         "food":"North Indian, South Indian",
