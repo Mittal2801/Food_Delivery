@@ -59,10 +59,8 @@ exports.getFoods = async (req, res) => {
 
 // GET FOOD BY CATEGORY
 exports.getFoodsByCategory = async (req, res) => {
-
   try {
-
-    console.log(req.params.category);
+    console.log("Category:", req.params.category);
 
     const foods = await Food.find({
       category: {
@@ -71,16 +69,17 @@ exports.getFoodsByCategory = async (req, res) => {
       },
     });
 
-    console.log(foods);
+    console.log("Foods:", foods);
 
     res.json(foods);
-
   } catch (error) {
+    console.error("CATEGORY ERROR:", error);
 
     res.status(500).json({
+      success: false,
       message: error.message,
+      stack: error.stack,
     });
-
   }
 };
 
