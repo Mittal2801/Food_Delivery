@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Brands, Category } from '../assets/Asserts'
+import { Brands, Category, FDAhme } from '../assets/Asserts'
 
 const Delivery = () => {
   return (
@@ -34,6 +34,26 @@ const Delivery = () => {
                         </div>
                     )
                 })
+            }
+            </div>
+            <div className='text-3xl mx-30 py-15'>Food Delivery Restaurants in Ahmedabad</div>
+            <div className='grid grid-cols-3 '>
+              {
+              FDAhme.map((p,index)=>{
+                  return(
+                    <div
+                      key={p._id || p.id || index}
+                      className='mx-15 my-5'
+                    >
+                    <div>
+                      <img src={p.image} className='rounded-sm' />
+                    </div>
+                    <div className='text-sm py-1'>{p.name}</div>
+                    <div className='text-sm'>{p.food}</div>
+                    <div className='font-semibold'>{p.price}</div>
+                  </div>
+                )
+              })
             }
             </div>
         </div>

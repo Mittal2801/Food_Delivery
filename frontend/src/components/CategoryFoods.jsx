@@ -5,7 +5,7 @@ import {
   getFoodsByCategory,
   deleteFood,
 } from "../api/foodApi";
-import { Category } from "../assets/Asserts";
+// import { Category } from "../assets/Asserts";
 
 function CategoryFoods() {
 
@@ -55,9 +55,9 @@ function CategoryFoods() {
 
     fetchFoods();
   };
-  const {id,category} = useParams();
+  // const {id,category} = useParams();
 
-  const ProductDetails = Category.find((p)=>p.id === parseInt(id))
+  // const ProductDetails = Category.find((p)=>p.id === parseInt(id))
 
   return (
 
@@ -84,25 +84,24 @@ function CategoryFoods() {
         <div style={styles.grid} className="mx-30">
 
          
-                      {
+                      {/* {
               foods.map((food,index) => (
                 <div key={index}>
                   {food.name}
                 </div>
               ))
-            }
+            } */}
           {foods.map((food) => (
-            <Link to={`/food-details/${food._id}`}>
-            <div
-              key={food._id}
-              style={styles.card}
-            >
+          <Link
+            key={food._id}
+            to={`/food-details/${food._id}`}>
+          <div style={styles.card}>
               
               {/* IMAGE */}
               <div style={styles.imageContainer}>
 
                 <img
-                  src={`http://localhost:5000/uploads/${food.image}`}
+                  src={`https://food-delivery-0p1u.onrender.com/uploads/${food.image}`}
                   alt={food.name}
                   style={styles.image}
                 />

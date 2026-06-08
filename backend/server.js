@@ -13,7 +13,8 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: "https://food-delivery-frontend-iqq6.onrender.com",
+    origin: ["http://localhost:5173",
+      "https://food-delivery-frontend-iqq6.onrender.com"] ,
     credentials: true,
   })
 );
