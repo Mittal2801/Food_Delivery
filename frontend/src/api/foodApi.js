@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = "https://food-delivery-0p1u.onrender.com";
+const API = "http://localhost:5000/api/foods";
 
 // ADD FOOD
 export const addFood = async (foodData) => {
@@ -22,7 +22,7 @@ export const getFoods = async () => {
 // GET FOODS BY CATEGORY
 export const getFoodsByCategory = async (category) => {
   const res = await axios.get(
-    `${API}/api/foods/category/${category}`
+    `${API}/category/${category}`
   );
 
   return res.data;
@@ -31,7 +31,7 @@ export const getFoodsByCategory = async (category) => {
 // DELETE FOOD
 export const deleteFood = async (id) => {
   const res = await axios.delete(
-    `${API}/api/foods/${id}`
+    `${API}/${id}`
   );
 
   return res.data;
@@ -40,7 +40,7 @@ export const deleteFood = async (id) => {
 // GET FOOD BY ID
 export const getFoodById = async (id) => {
   const res = await axios.get(
-    `${API}/api/foods/${id}`
+    `${API}/${id}`
   );
 
   return res.data;
@@ -52,7 +52,7 @@ export const getRelatedFoods = async (
   id
 ) => {
   const res = await axios.get(
-    `${API}/api/foods/related/${category}/${id}`
+    `${API}/related/${category}/${id}`
   );
 
   return res.data;

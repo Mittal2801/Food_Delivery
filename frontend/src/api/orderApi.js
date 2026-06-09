@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = "https://food-delivery-0p1u.onrender.com";
+const API = "http://localhost:5000/api/orders";
 
 export const placeOrder = async (data) => {
   const res = await axios.post(

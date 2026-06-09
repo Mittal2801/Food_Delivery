@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API =
-"https://food-delivery-0p1u.onrender.com";
+"http://localhost:5000/api/dashboard";
 
 export const getDashboard =
 async () => {
